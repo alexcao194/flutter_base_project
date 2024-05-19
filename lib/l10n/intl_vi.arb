@@ -1,0 +1,13 @@
+{
+  "app_name": "Ban lum tum",
+  "vietnamese": "Tiếng Việt",
+  "english": "Tiếng Anh",
+  "theme": "Chủ đề",
+  "theme_by_system": "Theo chủ đề hệ thống",
+  "light_mode": "Chế độ sáng",
+  "dark_mode": "Chế độ tối",
+  "save_settings_fail": "Không thể lưu cài đặt",
+  "get_settings_fail": "Không thể tải cài đặt",
+  "language": "Ngôn ngữ",
+  "language_by_system": "Theo ngôn ngữ hệ thống"
+}
