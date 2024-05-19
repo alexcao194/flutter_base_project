@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'app/presentation/blocs/static/settings_bloc.dart';
+import 'app/presentation/blocs/settings/settings_bloc.dart';
 import 'configs/router/app_router.dart';
 import 'generated/l10n.dart';
 

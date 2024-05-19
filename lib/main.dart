@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'app.dart';
-import 'app/presentation/blocs/static/settings_bloc.dart';
+import 'app/presentation/blocs/settings/settings_bloc.dart';
 import 'configs/di/di.dart';
 
 void main() async {

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../constants/language_codes.dart';
 import '../../../generated/l10n.dart';
 import '../../../utils/extensions/context_extensions.dart';
-import '../blocs/static/settings_bloc.dart';
+import '../blocs/settings/settings_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
