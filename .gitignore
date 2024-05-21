@@ -45,4 +45,4 @@ app.*.map.json
 # flutter generate files and folders
 *.g.dart
 *.freezed.dart
-lib/generated/
+**/generated/
