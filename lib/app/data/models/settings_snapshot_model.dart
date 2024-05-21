@@ -4,9 +4,9 @@ import 'package:hive/hive.dart';
 import '../../../constants/hive_types.dart';
 import '../../domain/entities/settings_snapshot.dart';
 
-part 'settings_snapshot_model.freezed.dart';
+part 'generated/settings_snapshot_model.freezed.dart';
 
-part 'settings_snapshot_model.g.dart';
+part 'generated/settings_snapshot_model.g.dart';
 
 @freezed
 @HiveType(typeId: HiveTypes.settingsSnapshot)

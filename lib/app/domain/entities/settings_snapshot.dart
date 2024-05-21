@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'settings_snapshot.freezed.dart';
+part 'generated/settings_snapshot.freezed.dart';
 
 @freezed
 class SettingsSnapshot with _$SettingsSnapshot {

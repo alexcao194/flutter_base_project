@@ -11,7 +11,7 @@ part 'settings_event.dart';
 
 part 'settings_state.dart';
 
-part 'settings_bloc.freezed.dart';
+part 'generated/settings_bloc.freezed.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   late final GetSettings _getSettings;
