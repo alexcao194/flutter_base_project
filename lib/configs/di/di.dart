@@ -7,7 +7,7 @@ import '../../app/data/repositories/static_repository_impl.dart';
 import '../../app/domain/repositories/static_repository.dart';
 import '../../app/domain/use_cases/get_settings.dart';
 import '../../app/domain/use_cases/save_settings.dart';
-import '../../app/presentation/blocs/settings/settings_bloc.dart';
+import '../../app/presentation/bloc/settings_bloc.dart';
 import '../../utils/tools/device_info_tools.dart';
 import '../dio/app_dio.dart';
 import '../hive/hive_tools.dart';

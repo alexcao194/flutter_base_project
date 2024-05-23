@@ -9,13 +9,13 @@ class AppRouter {
   const AppRouter._();
 
   static final router = GoRouter(
-    initialLocation: RoutePaths.join,
+    initialLocation: RoutePaths.settings,
     redirect: (_, state) {
       return null;
     },
     routes: [
       GoRoute(
-        path: RoutePaths.join,
+        path: RoutePaths.settings,
         pageBuilder: (context, state) => buildCustomTransitionPage(
           child: const SettingsScreen(),
           context: context,
