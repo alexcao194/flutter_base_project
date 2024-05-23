@@ -6,8 +6,8 @@ import '../../../generated/l10n.dart';
 import '../../../utils/extensions/context_extensions.dart';
 import '../blocs/settings/settings_bloc.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

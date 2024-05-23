@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../app/presentation/home/home_screen.dart';
+import '../../app/presentation/settings/settings_screen.dart';
 
 part 'route_paths.dart';
 
@@ -17,7 +17,7 @@ class AppRouter {
       GoRoute(
         path: RoutePaths.join,
         pageBuilder: (context, state) => buildCustomTransitionPage(
-          child: const HomeScreen(),
+          child: const SettingsScreen(),
           context: context,
           state: state,
         ),
