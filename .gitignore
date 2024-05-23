@@ -46,3 +46,8 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 **/generated/
+
+# key files
+key.properties
+keystore.jks
+google-services.json
