@@ -75,5 +75,15 @@
 - run `flutter pub run rename_app:main all="My App Name"`
 
 ### Start the app
-
 - `flutter run lib/main.dart`
+
+### Sign with your own keystore
+- Create a keystore file `keystore.jks`, it should be placed in `android/app` folder
+- Create a file `key.properties` in `android` folder with the following content:
+```
+storePassword=<password>
+keyPassword=<password>
+keyAlias=<alias>
+storeFile=<relative path to keystore file>
+```
+- Run `flutter build <build  type> --release` to build the apk file
