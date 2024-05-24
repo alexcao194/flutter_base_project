@@ -84,6 +84,6 @@
 storePassword=<password>
 keyPassword=<password>
 keyAlias=<alias>
-storeFile=<relative path to keystore file>
+storeFile=<relative path to keystore file> (from android/app)
 ```
 - Run `flutter build <build  type> --release` to build the apk file
