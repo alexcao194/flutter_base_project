@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../constants/language_codes.dart';
-import '../../../core/use_case/unit.dart';
-import '../../domain/entities/settings_snapshot.dart';
-import '../../domain/use_cases/get_settings.dart';
-import '../../domain/use_cases/save_settings.dart';
+import '../../../../constants/language_codes.dart';
+import '../../../../core/use_case/unit.dart';
+import '../../../domain/entities/settings_snapshot.dart';
+import '../../../domain/use_cases/get_settings.dart';
+import '../../../domain/use_cases/save_settings.dart';
+
 
 part 'settings_event.dart';
 

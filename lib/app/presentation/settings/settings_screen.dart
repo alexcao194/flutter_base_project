@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../constants/language_codes.dart';
 import '../../../generated/l10n.dart';
 import '../../../utils/extensions/context_extensions.dart';
-import '../bloc/settings_bloc.dart';
+import 'bloc/settings_bloc.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
