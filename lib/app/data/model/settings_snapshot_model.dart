@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
 import '../../../constants/hive_types.dart';
-import '../../domain/entities/settings_snapshot.dart';
+import '../../domain/entity/settings_snapshot.dart';
 
 part 'generated/settings_snapshot_model.freezed.dart';
 

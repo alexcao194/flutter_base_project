@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../configs/hive/hive_tools.dart';
-import '../models/settings_snapshot_model.dart';
+import '../model/settings_snapshot_model.dart';
 
 abstract interface class LocalData {
   Future<void> saveSettingsSnapshot(SettingsSnapshotModel settingsSnapshot);

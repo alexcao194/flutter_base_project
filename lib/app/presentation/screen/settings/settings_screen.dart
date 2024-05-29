@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../constants/language_codes.dart';
-import '../../../generated/l10n.dart';
-import '../../../utils/extensions/context_extensions.dart';
+import '../../../../constants/language_codes.dart';
+import '../../../../generated/l10n.dart';
 import 'bloc/settings_bloc.dart';
+import '../../../../utils/extensions/context_extensions.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

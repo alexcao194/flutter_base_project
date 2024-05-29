@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../../app/data/models/settings_snapshot_model.dart';
+import '../../app/data/model/settings_snapshot_model.dart';
+
 
 class HiveTools {
   static const String _settingsSnapshotKey = 'settings_snapshot';

@@ -1,5 +1,6 @@
-import 'package:base/app/presentation/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/presentation/screen/settings/settings_screen.dart';
 
 part 'route_paths.dart';
 

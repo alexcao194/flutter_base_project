@@ -2,12 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../app/data/data_sources/local_data.dart';
-import '../../app/data/repositories/local_repository_impl.dart';
-import '../../app/domain/repositories/local_repository.dart';
-import '../../app/domain/use_cases/get_settings.dart';
-import '../../app/domain/use_cases/save_settings.dart';
-import '../../app/presentation/settings/bloc/settings_bloc.dart';
+import '../../app/data/data_source/local_data.dart';
+import '../../app/data/repository/local_repository_impl.dart';
+import '../../app/domain/repository/local_repository.dart';
+import '../../app/domain/use_case/get_settings.dart';
+import '../../app/domain/use_case/save_settings.dart';
+import '../../app/presentation/screen/settings/bloc/settings_bloc.dart';
 import '../../utils/tools/device_info_tools.dart';
 import '../dio/app_dio.dart';
 import '../hive/hive_tools.dart';

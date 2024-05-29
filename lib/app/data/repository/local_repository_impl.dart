@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 
 import '../../../core/failure/failure.dart';
 import '../../../generated/l10n.dart';
-import '../../domain/entities/settings_snapshot.dart';
-import '../../domain/repositories/local_repository.dart';
-import '../data_sources/local_data.dart';
-import '../models/settings_snapshot_model.dart';
+import '../../domain/entity/settings_snapshot.dart';
+import '../../domain/repository/local_repository.dart';
+import '../data_source/local_data.dart';
+import '../model/settings_snapshot_model.dart';
 
 class LocalRepositoryImpl implements LocalRepository {
   final LocalData _localData;
