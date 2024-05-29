@@ -1,40 +1,23 @@
-import 'package:flutter/widgets.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../app/presentation/settings/settings_screen.dart';
+import 'package:base/app/presentation/settings/settings_screen.dart';
+import 'package:flutter/material.dart';
 
 part 'route_paths.dart';
 
 class AppRouter {
-  const AppRouter._();
-
-  static final router = GoRouter(
-    initialLocation: RoutePaths.settings,
-    redirect: (_, state) {
-      return null;
-    },
-    routes: [
-      GoRoute(
-        path: RoutePaths.settings,
-        pageBuilder: (context, state) => buildCustomTransitionPage(
-          child: const SettingsScreen(),
-          context: context,
-          state: state,
-        ),
-      ),
-    ],
-  );
-}
-
-CustomTransitionPage buildCustomTransitionPage<T>({
-  required BuildContext context,
-  required GoRouterState state,
-  required Widget child,
-}) {
-  return CustomTransitionPage<T>(
-    key: state.pageKey,
-    child: child,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-        FadeTransition(opacity: animation, child: child),
-  );
+  static Route<void> onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case RoutePaths.settings:
+        return MaterialPageRoute<void>(
+          builder: (_) => const SettingsScreen(),
+        );
+      default:
+        return MaterialPageRoute<void>(
+          builder: (_) => Scaffold(
+            body: Center(
+              child: Text('No route defined for ${settings.name}'),
+            ),
+          ),
+        );
+    }
+  }
 }

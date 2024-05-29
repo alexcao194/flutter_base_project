@@ -18,8 +18,9 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, state) {
-        return MaterialApp.router(
-          routerConfig: AppRouter.router,
+        return MaterialApp(
+          onGenerateRoute: AppRouter.onGenerateRoute,
+          initialRoute: RoutePaths.settings,
           debugShowCheckedModeBanner: false,
           theme: ThemeData.from(
             colorScheme: ColorScheme.fromSeed(seedColor: Color(state.seek), brightness: Brightness.light),
