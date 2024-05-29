@@ -3,17 +3,17 @@ import 'package:dartz/dartz.dart';
 import '../../../core/failure/failure.dart';
 import '../../../core/use_case/base_use_case_failable.dart';
 import '../entities/settings_snapshot.dart';
-import '../repositories/static_repository.dart';
+import '../repositories/local_repository.dart';
 
 class GetSettings extends BaseUseCaseFailable<void, SettingsSnapshot> {
-  final StaticRepository _staticRepository;
+  final LocalRepository _localRepository;
 
   const GetSettings({
-    required StaticRepository staticRepository,
-  }) : _staticRepository = staticRepository;
+    required LocalRepository localRepository,
+  }) : _localRepository = localRepository;
 
   @override
   Either<Failure, SettingsSnapshot> call(void params) {
-    return _staticRepository.getSettingsSnapshot();
+    return _localRepository.getSettingsSnapshot();
   }
 }

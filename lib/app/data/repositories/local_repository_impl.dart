@@ -3,14 +3,14 @@ import 'package:dartz/dartz.dart';
 import '../../../core/failure/failure.dart';
 import '../../../generated/l10n.dart';
 import '../../domain/entities/settings_snapshot.dart';
-import '../../domain/repositories/static_repository.dart';
+import '../../domain/repositories/local_repository.dart';
 import '../data_sources/local_data.dart';
 import '../models/settings_snapshot_model.dart';
 
-class StaticRepositoryImpl implements StaticRepository {
+class LocalRepositoryImpl implements LocalRepository {
   final LocalData _localData;
 
-  const StaticRepositoryImpl({
+  const LocalRepositoryImpl({
     required LocalData localData,
   }) : _localData = localData;
 

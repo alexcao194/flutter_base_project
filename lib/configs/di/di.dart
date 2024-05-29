@@ -3,8 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../app/data/data_sources/local_data.dart';
-import '../../app/data/repositories/static_repository_impl.dart';
-import '../../app/domain/repositories/static_repository.dart';
+import '../../app/data/repositories/local_repository_impl.dart';
+import '../../app/domain/repositories/local_repository.dart';
 import '../../app/domain/use_cases/get_settings.dart';
 import '../../app/domain/use_cases/save_settings.dart';
 import '../../app/presentation/bloc/settings_bloc.dart';
@@ -36,19 +36,19 @@ class DI {
     // UseCase
     sl.registerLazySingleton<GetSettings>(
       () => GetSettings(
-        staticRepository: sl(),
+        localRepository: sl(),
       ),
     );
 
     sl.registerLazySingleton<SaveSettings>(
       () => SaveSettings(
-        staticRepository: sl(),
+        localRepository: sl(),
       ),
     );
 
     // Repository
-    sl.registerLazySingleton<StaticRepository>(
-      () => StaticRepositoryImpl(localData: sl()),
+    sl.registerLazySingleton<LocalRepository>(
+      () => LocalRepositoryImpl(localData: sl()),
     );
 
     // DataSource
