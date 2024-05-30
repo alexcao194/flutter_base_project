@@ -12,21 +12,15 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final seeks = [
-      Colors.red,
       Colors.green,
       Colors.blue,
-      Colors.yellow,
       Colors.purple,
-      Colors.orange,
       Colors.pink,
       Colors.teal,
       Colors.indigo,
       Colors.cyan,
       Colors.amber,
       Colors.lime,
-      Colors.brown,
-      Colors.grey,
-      Colors.blueGrey,
     ];
 
     return BlocBuilder<SettingsBloc, SettingsState>(
