@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../constants/language_codes.dart';
 import '../../../../../core/use_case/unit.dart';
 import '../../../../domain/entity/settings_snapshot.dart';
 import '../../../../domain/use_case/get_settings.dart';
@@ -16,8 +15,6 @@ part 'generated/settings_bloc.freezed.dart';
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   late final GetSettings _getSettings;
   late final SaveSettings _saveSettings;
-
-  late SettingsSnapshot _settingsSnapshot;
 
   SettingsBloc({
     required GetSettings getSettings,
@@ -40,57 +37,35 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   }
 
   _onChangeColorSeek(_ChangeColorSeek event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(seek: event.seek));
-    _settingsSnapshot = _settingsSnapshot.copyWith(seek: event.seek);
-    _saveSettings(_settingsSnapshot);
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(seek: event.seek)));
+    _saveSettings(state.settingsSnapshot);
   }
 
   _onChangeLocale(_ChangeLanguage event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(languageCode: event.languageCode));
-    _settingsSnapshot = _settingsSnapshot.copyWith(languageCode: event.languageCode);
-    _saveSettings(_settingsSnapshot);
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(languageCode: event.languageCode)));
+    _saveSettings(state.settingsSnapshot);
   }
 
   _setResponsiveLanguage(_SetResponsiveLanguage event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(isResponsiveLanguage: event.isResponsiveLanguage));
-    _settingsSnapshot = _settingsSnapshot.copyWith(isResponsiveLanguage: event.isResponsiveLanguage);
-    _saveSettings(_settingsSnapshot);
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isResponsiveLanguage: event.isResponsiveLanguage)));
+    _saveSettings(state.settingsSnapshot);
   }
 
   _onGetSettings(_GetSettings event, Emitter<SettingsState> emit) {
     var result = _getSettings(Unit);
     result.fold(
-      (failure) => _settingsSnapshot = const SettingsSnapshot(
-        languageCode: LanguageCodes.english,
-        isResponsiveLanguage: true,
-        seek: 0,
-        isDarkMode: false,
-        isResponsiveTheme: true,
-      ),
-      (settingsSnapshot) {
-        _settingsSnapshot = settingsSnapshot;
-        emit(
-          state.copyWith(
-            languageCode: settingsSnapshot.languageCode,
-            isResponsiveLanguage: settingsSnapshot.isResponsiveLanguage,
-            seek: settingsSnapshot.seek,
-            isDarkMode: settingsSnapshot.isDarkMode,
-            isResponsiveTheme: settingsSnapshot.isResponsiveTheme,
-          ),
-        );
-      },
+      (failure) => null,
+      (settingsSnapshot) => emit(state.copyWith(settingsSnapshot: settingsSnapshot)),
     );
   }
 
   _onChangeTheme(_ChangeTheme event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(isDarkMode: event.isDarkMode));
-    _settingsSnapshot = _settingsSnapshot.copyWith(isDarkMode: event.isDarkMode);
-    _saveSettings(_settingsSnapshot);
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isDarkMode: event.isDarkMode)));
+    _saveSettings(state.settingsSnapshot);
   }
 
   _onSetResponsiveTheme(_SetResponsiveTheme event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(isResponsiveTheme: event.isResponsiveTheme));
-    _settingsSnapshot = _settingsSnapshot.copyWith(isResponsiveTheme: event.isResponsiveTheme);
-    _saveSettings(_settingsSnapshot);
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isResponsiveTheme: event.isResponsiveTheme)));
+    _saveSettings(state.settingsSnapshot);
   }
 }

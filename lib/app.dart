@@ -18,22 +18,23 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, state) {
+        var snapshot = state.settingsSnapshot;
         return MaterialApp(
           onGenerateRoute: AppRouter.onGenerateRoute,
           initialRoute: RoutePaths.settings,
           debugShowCheckedModeBanner: false,
           theme: ThemeData.from(
-            colorScheme: ColorScheme.fromSeed(seedColor: Color(state.seek), brightness: Brightness.light),
+            colorScheme: ColorScheme.fromSeed(seedColor: Color(snapshot.seek), brightness: Brightness.light),
           ),
           darkTheme: ThemeData.from(
-            colorScheme: ColorScheme.fromSeed(seedColor: Color(state.seek), brightness: Brightness.dark),
+            colorScheme: ColorScheme.fromSeed(seedColor: Color(snapshot.seek), brightness: Brightness.dark),
           ),
-          themeMode: state.isResponsiveTheme
+          themeMode: snapshot.isResponsiveTheme
               ? ThemeMode.system
-              : state.isDarkMode
+              : snapshot.isDarkMode
                   ? ThemeMode.dark
                   : ThemeMode.light,
-          locale: !state.isResponsiveLanguage ? Locale(state.languageCode) : null,
+          locale: !snapshot.isResponsiveLanguage ? Locale(snapshot.languageCode) : null,
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
