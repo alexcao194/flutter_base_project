@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 
-import '../../constants/end_points.dart';
+import '../../constants/api_env.dart';
 import 'logging_interceptor.dart';
 
 class AppDio {
-  static const String _baseUrl = EndPoints.stageBaseUrl;
+  static const String _baseUrl = ApiEnv.stageBaseUrl;
 
   static const int _connectTimeout = 30000;
   static const int _receiveTimeout = 30000;
