@@ -9,5 +9,8 @@
   "save_settings_fail": "Failed to save settings",
   "get_settings_fail": "Failed to get settings",
   "language": "Language",
-  "language_by_system": "Language by system"
+  "language_by_system": "Language by system",
+  "alert": "Alert",
+  "success": "Success",
+  "error": "Error"
 }

@@ -9,5 +9,8 @@
   "save_settings_fail": "Không thể lưu cài đặt",
   "get_settings_fail": "Không thể tải cài đặt",
   "language": "Ngôn ngữ",
-  "language_by_system": "Theo ngôn ngữ hệ thống"
+  "language_by_system": "Theo ngôn ngữ hệ thống",
+  "alert": "Thông báo",
+  "success": "Thành công",
+  "error": "Lỗi"
 }
