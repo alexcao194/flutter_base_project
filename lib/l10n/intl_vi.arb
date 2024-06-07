@@ -3,14 +3,14 @@
   "vietnamese": "Tiếng Việt",
   "english": "Tiếng Anh",
   "theme": "Chủ đề",
-  "theme_by_system": "Theo chủ đề hệ thống",
+  "system": "Hệ thống",
   "light_mode": "Chế độ sáng",
   "dark_mode": "Chế độ tối",
   "save_settings_fail": "Không thể lưu cài đặt",
   "get_settings_fail": "Không thể tải cài đặt",
   "language": "Ngôn ngữ",
-  "language_by_system": "Theo ngôn ngữ hệ thống",
   "alert": "Thông báo",
   "success": "Thành công",
-  "error": "Lỗi"
+  "error": "Lỗi",
+  "settings": "Cài đặt"
 }

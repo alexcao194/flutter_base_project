@@ -12,39 +12,26 @@ part 'generated/settings_snapshot_model.g.dart';
 @HiveType(typeId: HiveTypes.settingsSnapshot)
 class SettingsSnapshotModel with _$SettingsSnapshotModel {
   const factory SettingsSnapshotModel({
-    @HiveField(0)
-    required String languageCode,
-    @HiveField(1)
-    required bool isResponsiveLanguage,
-    @HiveField(2)
-    required int seek,
-    @HiveField(3)
-    required bool isDarkMode,
-    @HiveField(4)
-    required bool isResponsiveTheme,
+    @HiveField(0) @Default(null) String? languageCode,
+    @HiveField(1) @Default(0X0A75AD) int seek,
+    @HiveField(2) @Default(0) int themeMode,
   }) = _SettingsSnapshotModel;
 
-  factory SettingsSnapshotModel.fromEntity(SettingsSnapshot entity) =>
-      SettingsSnapshotModel(
+  factory SettingsSnapshotModel.fromEntity(SettingsSnapshot entity) => SettingsSnapshotModel(
         languageCode: entity.languageCode,
-        isResponsiveLanguage: entity.isResponsiveLanguage,
         seek: entity.seek,
-        isDarkMode: entity.isDarkMode,
-        isResponsiveTheme: entity.isResponsiveTheme,
+        themeMode: entity.themeMode,
       );
 
-  factory SettingsSnapshotModel.fromJson(Map<String, dynamic> json) =>
-      _$SettingsSnapshotModelFromJson(json);
+  factory SettingsSnapshotModel.fromJson(Map<String, dynamic> json) => _$SettingsSnapshotModelFromJson(json);
 }
 
 extension SettingsSnapshotModelX on SettingsSnapshotModel {
-  SettingsSnapshot toEntity()  {
+  SettingsSnapshot toEntity() {
     return SettingsSnapshot(
       languageCode: languageCode,
-      isResponsiveLanguage: isResponsiveLanguage,
       seek: seek,
-      isDarkMode: isDarkMode,
-      isResponsiveTheme: isResponsiveTheme,
+      themeMode: themeMode,
     );
   }
 }

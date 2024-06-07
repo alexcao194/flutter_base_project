@@ -3,14 +3,14 @@
   "vietnamese": "Vietnamese",
   "english": "English",
   "theme": "Theme",
-  "theme_by_system": "Theme by system",
+  "system": "System",
   "light_mode": "Light mode",
   "dark_mode": "Dark mode",
   "save_settings_fail": "Failed to save settings",
   "get_settings_fail": "Failed to get settings",
   "language": "Language",
-  "language_by_system": "Language by system",
   "alert": "Alert",
   "success": "Success",
-  "error": "Error"
+  "error": "Error",
+  "settings": "Settings"
 }

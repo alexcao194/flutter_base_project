@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -27,9 +28,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         getSettings: (event) => _onGetSettings(event, emit),
         changeColorSeek: (event) => _onChangeColorSeek(event, emit),
         changeLocale: (event) => _onChangeLocale(event, emit),
-        setResponsiveLanguage: (event) => _setResponsiveLanguage(event, emit),
         changeTheme: (event) => _onChangeTheme(event, emit),
-        setResponsiveTheme: (event) => _onSetResponsiveTheme(event, emit),
       );
     });
 
@@ -46,11 +45,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     _saveSettings(state.settingsSnapshot);
   }
 
-  _setResponsiveLanguage(_SetResponsiveLanguage event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isResponsiveLanguage: event.isResponsiveLanguage)));
-    _saveSettings(state.settingsSnapshot);
-  }
-
   _onGetSettings(_GetSettings event, Emitter<SettingsState> emit) {
     var result = _getSettings(Unit);
     result.fold(
@@ -60,12 +54,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   }
 
   _onChangeTheme(_ChangeTheme event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isDarkMode: event.isDarkMode)));
-    _saveSettings(state.settingsSnapshot);
-  }
-
-  _onSetResponsiveTheme(_SetResponsiveTheme event, Emitter<SettingsState> emit) {
-    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(isResponsiveTheme: event.isResponsiveTheme)));
+    emit(state.copyWith(settingsSnapshot: state.settingsSnapshot.copyWith(themeMode: event.themeMode)));
     _saveSettings(state.settingsSnapshot);
   }
 }

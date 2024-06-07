@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'constants/language_codes.dart';
 import 'app/presentation/screen/settings/bloc/settings_bloc.dart';
 import 'configs/router/app_router.dart';
 import 'generated/l10n.dart';
@@ -19,9 +20,11 @@ class _AppState extends State<App> {
     return BlocBuilder<SettingsBloc, SettingsState>(
       builder: (context, state) {
         var snapshot = state.settingsSnapshot;
+        var languageCode = LanguageCodes.fromCode(snapshot.languageCode).code;
+        debugPrint('snapshot: $snapshot');
         return MaterialApp(
           onGenerateRoute: AppRouter.onGenerateRoute,
-          initialRoute: RoutePaths.settings,
+          initialRoute: RoutePaths.home,
           debugShowCheckedModeBanner: false,
           theme: ThemeData.from(
             colorScheme: ColorScheme.fromSeed(seedColor: Color(snapshot.seek), brightness: Brightness.light),
@@ -29,12 +32,8 @@ class _AppState extends State<App> {
           darkTheme: ThemeData.from(
             colorScheme: ColorScheme.fromSeed(seedColor: Color(snapshot.seek), brightness: Brightness.dark),
           ),
-          themeMode: snapshot.isResponsiveTheme
-              ? ThemeMode.system
-              : snapshot.isDarkMode
-                  ? ThemeMode.dark
-                  : ThemeMode.light,
-          locale: !snapshot.isResponsiveLanguage ? Locale(snapshot.languageCode) : null,
+          themeMode: ThemeMode.values[snapshot.themeMode],
+          locale: languageCode == null ? null : Locale(languageCode),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
