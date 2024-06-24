@@ -58,10 +58,7 @@
 - click `Build` -> `Generate Flutter Assets` to generate assets path
 
 ### generate localization
-- open `intl_en.arb` file in `lib/l10n` folder
-- change the value of 'app_name' to your app name
-- `Ctrl + S` to save the file
-- Flutter Intl will generate the localization files in `lib/l10n/generated` folder
+- run `flutter --no-color pub global run intl_utils:generate` to generate localization files
 
 ### generate splash screen (optional)
 - configure splash screen in `flutter_native_splash.yaml`, then run:
