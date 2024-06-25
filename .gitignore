@@ -45,7 +45,10 @@ app.*.map.json
 # flutter generate files and folders
 *.g.dart
 *.freezed.dart
-**/generated/
+**/generated/**
+
+# exceptions to the above rules
+!**/generated/assets.dart
 
 # key files
 key.properties

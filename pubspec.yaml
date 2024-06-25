@@ -123,5 +123,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - lib/utils/
+    - lib/utils/tools/
+    - lib/utils/extensions/
+    - lib/utils/validators/
+
 flutter_intl:
   enabled: true

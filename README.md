@@ -44,18 +44,12 @@
 
 ## Usage
 
-### Plugins required
-- FlutterAssetsGenerator
-- Flutter Intl
-
 ### Install dependencies
 - Move to root dir `cd {root}`
 - Install necessary packages `flutter pub get`
 
 ### generate files
 - generate necessary files: `flutter pub run build_runner build --delete-conflicting-outputs`
-- right click on `assets` folder and click `Flutter: Configuring Paths` to add assets path into `pubspec.yaml`
-- click `Build` -> `Generate Flutter Assets` to generate assets path
 
 ### generate localization
 - run `flutter --no-color pub global run intl_utils:generate` to generate localization files
@@ -83,4 +77,4 @@ keyPassword=<password>
 keyAlias=<alias>
 storeFile=<relative path to keystore file> (from android/app)
 ```
-- Run `flutter build <build  type> --release` to build the apk file
+- Run `flutter build <build  type> --release` to build the apk/aab file
