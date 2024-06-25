@@ -28,14 +28,6 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
-/*
-key.properties file should contain the following:
-storePassword=<password>
-keyPassword=<password>
-keyAlias=<alias>
-storeFile=<relative path to keystore file>
-*/
-
 android {
     namespace = "com.alexcao.base"
     compileSdk = flutter.compileSdkVersion
