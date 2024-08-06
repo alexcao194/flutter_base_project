@@ -50,6 +50,9 @@ app.*.map.json
 # exceptions to the above rules
 !**/generated/assets.dart
 
+#env
+.env
+
 # key files
 key.properties
 keystore.jks

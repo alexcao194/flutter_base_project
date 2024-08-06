@@ -9,6 +9,10 @@
 - [Fastlane](https://docs.fastlane.tools/)
 
 ## Folder structure
+- `.env`: Environment variables
+  - `prod.json`: Production environment
+  - `dev.json`: Development environment
+  - `stag.json`: Staging environment
 - `assets`: The folder to store resources file such as fonts, images and lottie animations
   - `images`: store images
   - `rive`: store lottie animations
@@ -48,6 +52,12 @@
 - Move to root dir `cd {root}`
 - Install necessary packages `flutter pub get`
 
+### Environment
+- Create `.env` folder in root dir
+- Create `dev.json`, `stag.json`, `prod.json` in `.env` folder
+- Add environment variables to each file
+- Usage: `String.fromEnvironment('ENV_NAME', defaultValue: 'default value')`, similar with other types
+
 ### generate files
 - generate necessary files: `flutter pub run build_runner build --delete-conflicting-outputs`
 
@@ -66,7 +76,7 @@
 - run `flutter pub run rename_app:main all="My App Name"`
 
 ### Start the app
-- `flutter run lib/main.dart`
+- `flutter run lib/main.dart --dart-define-from-file=.env/{dev|stag|prod}.json`
 
 ### Sign with your own keystore
 - Create a keystore file `keystore.jks`, it should be placed in `android/app` folder
