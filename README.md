@@ -55,7 +55,7 @@
 ### Environment
 - Create `.env` folder in root dir
 - Create `dev.json`, `stag.json`, `prod.json` in `.env` folder
-- Add environment variables to each file
+- Add environment variables to each file, in case of unused environment, just create an empty file
 - Usage: `String.fromEnvironment('ENV_NAME', defaultValue: 'default value')`, similar with other types
 
 ### generate files
