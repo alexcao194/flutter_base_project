@@ -8,7 +8,6 @@ import '../../app/domain/repository/local_repository.dart';
 import '../../app/domain/use_case/get_settings.dart';
 import '../../app/domain/use_case/save_settings.dart';
 import '../../app/presentation/screen/settings/bloc/settings_bloc.dart';
-import '../../utils/tools/device_info_tools.dart';
 import '../dio/app_dio.dart';
 import '../hive/hive_tools.dart';
 
@@ -62,8 +61,6 @@ class DI {
     // Service
     final sharedPrefs = await SharedPreferences.getInstance();
     sl.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
-
-    sl.registerLazySingleton<DeviceInfoTools>(() => DeviceInfoTools());
 
     sl.registerLazySingleton<AppDio>(() => AppDio());
     sl.registerLazySingleton<Dio>(() => sl<AppDio>().dio);
